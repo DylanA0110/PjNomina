@@ -1,16 +1,12 @@
-﻿using System.Data.SqlClient;
+using System.Data.SqlClient;
 
 namespace Controladores
 {
     public static class Conexion
     {
-        static string name = "DESKTOP-IO3CIEI\\DYLANSQL";
-        static string user = "sa";
-        static string password = "dylanaraica123";
-        //la primer conexion se usa para crear la base de datos, la segunda es cuando ya esta creada
-        public static string conexionInicial = $"Data Source={name};Initial Catalog=master;User ID={user};Password={password}";
-        //Cambiar Conexion cuando se crea la base de datos
-        public static string conexion = $"Data Source={name};Initial Catalog=nomina;User ID={user};Password={password}";
+         string serverName = ".";
+        string initialConnection = $"Data Source={serverName};Initial Catalog=master;Integrated Security=True;";
+        string connection = $"Data Source={serverName};Initial Catalog=nomina;Integrated Security=True;";
         
         public static void CrearBaseDeDatosYTablaSiNoExisten()
         {
